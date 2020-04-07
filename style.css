@@ -1,3 +1,60 @@
-body{
-    background-color: antiquewhite;
+main{
+    margin: 0 auto;
+    text-align: center;
 }
+.wrapper {
+    width: 20%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  /* .one {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .two { 
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .three {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .four {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .five {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .six {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  .five {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .six {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .seven {
+    grid-column: 3;
+    grid-row: 3;
+  } */
+  .box{
+      /* width: 100px; */
+      padding: 50px;
+      background-color: gray;
+      border: 1px solid black;
+  }
+  .crossDone{
+      background-color: cornflowerblue;
+  }
+  .circleDone{
+      background-color: goldenrod;
+  }
