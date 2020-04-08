@@ -1,60 +1,48 @@
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
 main{
-    margin: 0 auto;
+    margin: 0;
     text-align: center;
 }
+.gamePage{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  justify-content: right;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+}
+.scores{
+  padding: 20px;
+  background-color: #84a5db;
+  margin: 20px auto;
+  width: 300px;
+  /* text-align: left; */
+}
 .wrapper {
-    width: 20%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    justify-content: center;
-    margin: 0 auto;
-  }
-  /* .one {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .two { 
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .three {
-    grid-column: 3;
-    grid-row: 1;
-  }
-  .four {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .five {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  .six {
-    grid-column: 3;
-    grid-row: 2;
-  }
-  .five {
-    grid-column: 1;
-    grid-row: 3;
-  }
-  .six {
-    grid-column: 2;
-    grid-row: 3;
-  }
-  .seven {
-    grid-column: 3;
-    grid-row: 3;
-  } */
-  .box{
-      /* width: 100px; */
-      padding: 50px;
-      background-color: gray;
-      border: 1px solid black;
-  }
-  .crossDone{
-      background-color: cornflowerblue;
-  }
-  .circleDone{
-      background-color: goldenrod;
-  }
+  /* width: 60%; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows : repeat(3, 1fr);
+  grid-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+}
+.box{
+  padding: 50px;
+  background-color: gray;
+  border: 1px solid black;
+  box-shadow: 2px 5px 5px gray ;
+}
+.crossDone{
+  background-color: cornflowerblue;
+}
+.circleDone{
+  background-color: goldenrod;
+}
