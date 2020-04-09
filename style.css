@@ -1,48 +1,84 @@
-*, *::after, *::before{
+*{
   box-sizing: border-box;
-}
+} 
 body{
   margin: 0;
-}
-main{
-    margin: 0;
-    text-align: center;
-}
+  font-family: 'Gotu', sans-serif;}
 .gamePage{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  justify-content: right;
-  align-items: center;
-  width: 60%;
-  margin: 0 auto;
-}
-.scores{
-  padding: 20px;
-  background-color: #84a5db;
-  margin: 20px auto;
-  width: 300px;
-  /* text-align: left; */
-}
-.wrapper {
-  /* width: 60%; */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows : repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-template-columns: 320px 200px;
+  grid-template-rows: 320px 100px;
+  grid-gap: 40px;
   justify-content: center;
   align-items: center;
+  width: 50%;
   margin: 100px auto;
 }
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows : repeat(3, 100px);
+  column-gap: 10px;
+  row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
 .box{
-  padding: 50px;
-  background-color: gray;
+  padding: 0;
+  background-color: darkgray;
   border: 1px solid black;
-  box-shadow: 2px 5px 5px gray ;
+  box-shadow: 2px 5px 5px gray;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 60px;
+  color: gray;
+}
+text{
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 85px;
+  color: gray;
+  visibility: hidden;
+}
+.gameStates{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 25px);
+  grid-gap: 30px;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+.scores{
+  font-size: 25px;
+  padding: 0;
+  background-color: #b5adfc;
+  text-align: center;
+  border: 0.5px solid black;
+  box-shadow: 2px 5px 5px gray;
+  border-radius: 5px;
+}
+.reset{
+  font-size: 30px;
+  background-color: grey;
+  padding: 15px;
+  border: 0.5px solid black;
+  box-shadow: 2px 5px 5px gray;
+  border-radius: 5px;
+  width: 100%;
 }
 .crossDone{
   background-color: cornflowerblue;
 }
 .circleDone{
   background-color: goldenrod;
+}
+.xDone{
+  color: goldenrod;
+  visibility: visible;
+}
+.oDone{
+  color: cornflowerblue;
+  visibility: visible ;
 }
