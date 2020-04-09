@@ -5,6 +5,7 @@ let player1Score = document.querySelector('.pOne');
 let player2Score = document.querySelector('.pTwo');
 let result = document.querySelector('.result');
 let reset = document.querySelector('.reset');
+let newSeriese = document.querySelector('.newSeriese')
 
 
 let counter = 0;
@@ -155,16 +156,24 @@ const resetTheGame = (e)=>{
         element.classList.remove('xDone');
         element.classList.remove('oDone');
         element.textContent = '?';
-        hasWinner = false;
-        counter = 0;
-        playerOneSelections = [];
-        playerTwoSelections = [];
-        playerOneCombo = [];
-        playerTwoCombo = [];
     })
+    hasWinner = false;
+    counter = 0;
+    playerOneSelections = [];
+    playerTwoSelections = [];
+    playerOneCombo = [];
+    playerTwoCombo = [];
+    result.textContent = '?';
 }
 
+const startNewSeriese = ()=>{
+    playerOneScore = 0;
+    playerTwoScore = 0;
+    player1Score.textContent = playerOneScore;
+    player2Score.textContent = playerTwoScore;
+}
 
 
 boxes.forEach((element)=>{element.addEventListener('click',playGame)});
 reset.addEventListener('click', resetTheGame);
+newSeriese.addEventListener('click', startNewSeriese);

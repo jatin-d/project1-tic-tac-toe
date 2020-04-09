@@ -59,7 +59,7 @@ text{
   box-shadow: 2px 5px 5px gray;
   border-radius: 5px;
 }
-.reset{
+.reset, .newSeriese{
   font-size: 30px;
   background-color: grey;
   padding: 15px;
