@@ -1,4 +1,4 @@
-# project1-tic-tac-toe
+# Project1-tic-tac-toe
 
 #About Tic Tac Toe
 Tic- Tac- Toe is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
@@ -24,4 +24,3 @@ The code tracks any clicks that happen on a cells. It checks if a valid move has
 
 #To play the game
 Visit : <https://jatin-d.github.io/project1-tic-tac-toe/>
-
