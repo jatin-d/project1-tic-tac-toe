@@ -8,6 +8,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="overlay overlayInVisible" id="gameModeDialog">
+        <form class="dialogForms" method="dialog">
+            <div class="formItemContainer">
+                <label class="lables" for="gameMode">Game mode:
+                <select class="selectOptions" id="gameMode">
+                <option class="options" id="onePlayer">One Player</option>
+                <option class="options" id="twoPlayers">Two Players</option>
+                </select>
+                </label>
+            </div>
+            <div class="buttonContainer">
+                <button class="optionButtons" id="gameModeCancle" value="cancel">Cancel</button>
+                <button class="optionButtons" id="confirmBtnGmMode" value="default">Confirm</button>
+            </div>
+        </form>
+    </div>
+    <div class="overlay overlayInVisible" id="playerProfileDialog">
+        <form class="dialogForms" method="dialog">
+            <div>
+                <label class="lables" for="user1's Name">Player One:</label>
+                <input class="selectInputs" id="playerOneName" type="text">
+            </div>
+            <div>
+                <label class="lables" for="user2's Name">Player Two:</label>
+                <input class="selectInputs" id="playerTwoName" type="text">
+            </div>
+            <p><label class="lables" for="selectMove">Shape For Player One:
+                <select class="selectOptions" id="firstMoveShape">
+                <option class="options" id="firstMoveCross">X</option>
+                <option class="options" id="secondMoveCross">O</option>
+                </select>
+            </label>
+            </p>
+            <menu>
+                <button class="optionButtons" id="playerProfileCancle" value="cancel">Cancel</button>
+                <button class="optionButtons" id="confirmBtnPlayerProfile" value="default">Confirm</button>
+            </menu>
+        </form>
+    </div>
     <main class="gamePage">
         <div class="wrapper">
             <div class="1 box boxitem1">?</div>
@@ -21,18 +60,28 @@
             <div class="9 box boxitem9">?</div>
         </div>
         <div class="gameStates">
-            <div>Result..</div>
-            <div class="result scores">?</div>
+            <!-- <div>Result..</div>
+            <div class="result scores">?</div> -->
             <div>Player 1 score</div>
             <div class="pOne scores">000</div>
             <div>Player 2 score</div>
             <div class="pTwo scores">000</div>
+            <div>Darw score</div>
+            <div class="draws scores">000</div>
+        </div>
+        <div class="settingManu">
+            <div>
+                <button id="reset"><img src="images/reset.png" alt="reset game image"></button>
+            </div>
+            <div>
+                <button id="gameSetting"><img src="images/game.png" alt="game setting image"></button>
+            </div>
+            <div>
+                <button id="playerSetting"><img src="images/player.png" alt="player setting image"></button>
+            </div>
         </div>
         <div>
-            <button class="reset">Reset the game</button>
-        </div>
-        <div>
-            <button class="newSeriese">New Seriese</button>
+            <button id="newSeriese"><img src="images/new.png" alt=""></button>
         </div>
     </main>
     <script src="main.js"></script>

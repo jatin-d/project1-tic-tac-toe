@@ -7,8 +7,8 @@ body{
 .gamePage{
   display: grid;
   grid-template-columns: 320px 200px;
-  grid-template-rows: 320px 100px;
-  grid-gap: 40px;
+  grid-template-rows: 320px 80px;
+  grid-gap: 60px;
   justify-content: center;
   align-items: center;
   width: 50%;
@@ -59,14 +59,44 @@ text{
   box-shadow: 2px 5px 5px gray;
   border-radius: 5px;
 }
-.reset, .newSeriese{
-  font-size: 30px;
+.settingManu{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#reset, #gameSetting, #playerSetting{
+  /* font-size: 30px; */
   background-color: grey;
-  padding: 15px;
+  /* padding: 15px; */
   border: 0.5px solid black;
   box-shadow: 2px 5px 5px gray;
   border-radius: 5px;
-  width: 100%;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+#newSeriese{
+    /* font-size: 30px; */
+    background-color: grey;
+    /* padding: 15px; */
+    border: 0.5px solid black;
+    box-shadow: 2px 5px 5px gray;
+    border-radius: 5px;
+    width: 200px;
+    height: 80px;
+    text-align: center;
+}
+img{
+  display: block;
+  margin: 0;
+  text-align: center;
+  width: 80px;
+  height: 80px;
 }
 .crossDone{
   background-color: cornflowerblue;
@@ -81,4 +111,57 @@ text{
 .oDone{
   color: cornflowerblue;
   visibility: visible ;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(192, 188, 188, 0.7);
+  transition: opacity 500ms;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.overlayInVisible{
+  visibility: hidden;
+  opacity: 0;
+}
+.overlayVisible {
+  visibility: visible;
+  opacity: 1;
+  margin: 90px auto;
+  padding: 20px;
+  background: rgb(255, 210, 111);
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 600px;
+  height: 500px;
+  transition: all 0.5s ease-out;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(72, 87, 255);
+  text-align: center;
+  align-content: center;
+}
+.optionButtons, .selectOptions{
+  width: 150px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 20px;
+  /* padding: 10px; */
+  margin: 10px;
+}
+
+.formItemContainer{
+margin: 100px;
+}
+.lables{
+margin: 30px;
 }

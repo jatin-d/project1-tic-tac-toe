@@ -3,11 +3,27 @@ console.log('Tic-Tac-Toe');
 let boxes = document.querySelectorAll('.box');
 let player1Score = document.querySelector('.pOne');
 let player2Score = document.querySelector('.pTwo');
-let result = document.querySelector('.result');
-let reset = document.querySelector('.reset');
-let newSeriese = document.querySelector('.newSeriese')
+// let result = document.querySelector('.result');
+let reset = document.querySelector('#reset');
+let newSeriese = document.querySelector('#newSeriese');
+let gameSettingBtn = document.querySelector('#gameSetting');
+let playerSettingBtn = document.querySelector('#playerSetting');
+let gameModeDialog = document.querySelector('#gameModeDialog');
+let playerProfileDialog = document.querySelector('#playerProfileDialog');
+let gameModeCancleBtn = document.querySelector('#gameModeCancle')
+let playerProfileCancleBtn = document.querySelector('#playerProfileCancle');
+let gameModeConfirmBtn = document.querySelector('#confirmBtnGmMode');
+let playerSelectionConfirmBtn = document.querySelector('#confirmBtnPlayerProfile');
 
+let player1NameContainer = document.querySelector('#playerOneName');
+let player2NameContainer = document.querySelector('#playerTwoName');
+let gameMode = document.querySelector('#gameMode');
+let firstMoveShape = document.querySelector('#firstMoveShape');
 
+let playerOne = '';
+let playerTwo = '';
+let modeSelected = '';
+let selectedShape = 'X';
 let counter = 0;
 let playerOneSelections = [];
 let playerTwoSelections = [];
@@ -48,7 +64,7 @@ const doCross = (e)=>{
     }
     counter++;
     if(hasWinner){
-        result.textContent = "Player 1 wins";
+        // result.textContent = "Player 1 wins";
         player1Score.textContent = playerOneScore;
     }
 }
@@ -74,21 +90,34 @@ const doCircle = (e)=>{
         }
         counter++;
         if(hasWinner){
-            result.textContent = "Player 2 wins";
+            // result.textContent = "Player 2 wins";
             player2Score.textContent = playerTwoScore;
         }
 }
 
 const playGame = (e)=>{
-    if(!e.target.classList.contains('circleDone') && !e.target.classList.contains('crossDone') && hasWinner === false){
-        if(counter%2 === 0) {
-            doCross(e);
-            // validation(playerOneCombo, winningCombinations, result1);
-        } else {
-            doCircle(e);
-            // validation(playerTwoCombo, winningCombinations, result2);
+    if(!e.target.classList.contains('circleDone') && !e.target.classList.contains('crossDone') && hasWinner === false ){
+        if(selectedShape === "X"){
+            if(counter%2 === 0) {
+                doCross(e);
+                // validation(playerOneCombo, winningCombinations, result1);
+            } else {
+                doCircle(e);
+                // validation(playerTwoCombo, winningCombinations, result2);
+            }
+        }
+        else if (selectedShape === "O"){
+            if(counter%2 === 0) {
+                doCircle(e);
+                // validation(playerOneCombo, winningCombinations, result1);
+            } else {
+                doCross(e);
+                // validation(playerTwoCombo, winningCombinations, result2);
+            }
         }
     } 
+
+
 }
 
 const createCombo = (arr1, arr2)=>{
@@ -163,7 +192,7 @@ const resetTheGame = (e)=>{
     playerTwoSelections = [];
     playerOneCombo = [];
     playerTwoCombo = [];
-    result.textContent = '?';
+    // result.textContent = '?';
 }
 
 const startNewSeriese = ()=>{
@@ -174,6 +203,37 @@ const startNewSeriese = ()=>{
 }
 
 
+const openGameMode = (e)=>{
+    gameModeDialog.classList.toggle('overlayInVisible');
+    gameModeDialog.classList.toggle('overlayVisible');
+}
+
+const openPlayerSetting = ()=>{
+    playerProfileDialog.classList.toggle('overlayInVisible');
+    playerProfileDialog.classList.toggle('overlayVisible');
+}
+
+const setMode = ()=>{
+    modeSelected = gameMode.value;
+    // playerProfileDialog.classList.toggle('overlayInVisible');
+    playerProfileDialog.classList.toggle('overlayVisible');
+}
+
+const setPlayers = ()=>{
+    playerOne = player1NameContainer.value;
+    playerTwo = player2NameContainer.value;
+    selectedShape = firstMoveShape.value;
+    playerProfileDialog.classList.toggle('overlayInVisible');
+    playerProfileDialog.classList.toggle('overlayVisible');
+
+}
+
 boxes.forEach((element)=>{element.addEventListener('click',playGame)});
 reset.addEventListener('click', resetTheGame);
 newSeriese.addEventListener('click', startNewSeriese);
+gameSettingBtn.addEventListener('click', openGameMode);
+playerSettingBtn.addEventListener('click', openPlayerSetting);
+gameModeCancleBtn.addEventListener('click', openGameMode);
+playerProfileCancleBtn.addEventListener('click', openPlayerSetting);
+gameModeConfirmBtn.addEventListener('click', setMode);
+playerSelectionConfirmBtn.addEventListener('click', setPlayers);
